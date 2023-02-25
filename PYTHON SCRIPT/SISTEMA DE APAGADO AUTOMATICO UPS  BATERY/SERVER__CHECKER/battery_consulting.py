@@ -10,7 +10,7 @@ def shutdown_server():
     # Conexión al servidor remoto
     ssh = paramiko.SSHClient()
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-    ssh.connect('192.168.1.23', username='root', password='r0m4n0s.1507')
+    ssh.connect('192.168.1.23', username='root', password='YourP4ssw0rd')
 
     # Ejecución del comando para apagar el servidor
     ssh.exec_command('shutdown -h now')
