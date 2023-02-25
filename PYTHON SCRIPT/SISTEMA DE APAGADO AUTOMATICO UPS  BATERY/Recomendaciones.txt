@@ -1,0 +1,47 @@
+Para habilitar el acceso SSH para la cuenta root en un servidor Linux, debe seguir estos pasos:
+
+Inicie sesión en el servidor Linux como usuario con permisos de superusuario.
+
+Edite el archivo de configuración de SSH, que generalmente se encuentra en /etc/ssh/sshd_config, con su editor de texto favorito. Por ejemplo, usando el editor nano:
+
+bash
+Copy code
+sudo nano /etc/ssh/sshd_config
+Busque la línea que comienza con PermitRootLogin y cambie su valor a yes. Si no hay una línea existente, puede agregarla al final del archivo. El archivo de configuración debe verse así:
+
+bash
+Copy code
+# Authentication:
+LoginGraceTime 120
+PermitRootLogin yes
+StrictModes yes
+Guarde los cambios y cierre el archivo.
+
+Reinicie el servicio SSH para que los cambios surtan efecto:
+
+Copy code
+sudo systemctl restart sshd
+Una vez que se hayan realizado estos pasos, podrá conectarse al servidor mediante SSH como usuario root. Recuerde que habilitar el acceso SSH para la cuenta root puede ser un riesgo de seguridad, por lo que debe tomarse precaución al hacerlo.
+
+
+
+###OPCION2##
+
+Para agregar un usuario al grupo sudo en Linux, sigue estos pasos:
+
+Inicia sesión como un usuario con permisos de superusuario (por ejemplo, root).
+
+Ejecuta el siguiente comando para agregar un usuario al grupo sudo:
+
+Copy code
+usermod -aG sudo nombre_del_usuario
+Reemplaza "nombre_del_usuario" con el nombre del usuario que deseas agregar al grupo sudo.
+
+Verifica que el usuario se haya agregado correctamente al grupo sudo ejecutando el siguiente comando:
+
+bash
+Copy code
+groups nombre_del_usuario
+Este comando mostrará los grupos a los que pertenece el usuario, asegúrate de que el grupo sudo aparezca en la lista.
+
+Con esto deberías poder ejecutar comandos con permisos de superusuario utilizando el comando sudo con el usuario que agregaste al grupo.
