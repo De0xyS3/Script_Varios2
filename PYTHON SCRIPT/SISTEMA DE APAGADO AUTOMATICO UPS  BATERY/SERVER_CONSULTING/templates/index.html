@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="refresh" content="5">
+
+
+    <meta charset="UTF-8">
+    <title>Battery State</title>
+    <script>
+    function updateBattery() {
+        fetch('/')
+            .then(response => response.text())
+            .then(state => {
+                document.getElementById('battery-state').innerHTML = state;
+            })
+            .catch(error => console.log(error));
+    }
+    setInterval(updateBattery, 5000);
+
+    // Agregar esta función para limpiar el contenido anterior del span
+    function clearState() {
+        document.getElementById('battery-state').innerHTML = '';
+    }
+    setInterval(clearState, 5000);
+</script>
+
+</head>
+<body>
+    <h1>Battery State</h1>
+    <p>Current state: <span id="battery-state">{{ state }}</span></p>
+</body>
+</html>
