@@ -4,12 +4,12 @@ Inicie sesión en el servidor Linux como usuario con permisos de superusuario.
 
 Edite el archivo de configuración de SSH, que generalmente se encuentra en /etc/ssh/sshd_config, con su editor de texto favorito. Por ejemplo, usando el editor nano:
 
-bash
+
 Copy code
 sudo nano /etc/ssh/sshd_config
 Busque la línea que comienza con PermitRootLogin y cambie su valor a yes. Si no hay una línea existente, puede agregarla al final del archivo. El archivo de configuración debe verse así:
 
-bash
+
 Copy code
 # Authentication:
 LoginGraceTime 120
@@ -39,7 +39,7 @@ Reemplaza "nombre_del_usuario" con el nombre del usuario que deseas agregar al g
 
 Verifica que el usuario se haya agregado correctamente al grupo sudo ejecutando el siguiente comando:
 
-bash
+
 Copy code
 groups nombre_del_usuario
 Este comando mostrará los grupos a los que pertenece el usuario, asegúrate de que el grupo sudo aparezca en la lista.
