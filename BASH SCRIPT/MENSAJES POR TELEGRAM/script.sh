@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # FTP LOGIN
 HOST='sftp://ftp.domain.com'
 USER='ftpusername'

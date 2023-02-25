@@ -1,3 +1,6 @@
+#!/bin/sh
+
+
 ##sudo apt-get install mailutils para debian/ubuntu
 
 ##sudo yum install mailx para centos
