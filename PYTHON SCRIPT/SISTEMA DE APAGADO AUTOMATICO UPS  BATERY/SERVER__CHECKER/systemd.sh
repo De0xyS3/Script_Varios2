@@ -12,6 +12,7 @@ Description=Comprueba el estado de la batería y apaga el servidor remoto si es 
 [Service]
 User=$USER
 ExecStart=/usr/bin/python3 $script_path
+ExecStartPre=/bin/sleep 1h
 Restart=on-failure
 
 [Install]
