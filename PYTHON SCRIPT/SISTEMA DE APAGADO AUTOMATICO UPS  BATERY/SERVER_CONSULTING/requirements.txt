@@ -1,5 +1,5 @@
 pyopenssl==20.0.1
-requests==2.26.0
 beautifulsoup4==4.9.3
 Flask==1.1.2
 pysnmp==4.4.12
+requests==2.26.0
