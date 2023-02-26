@@ -1,6 +1,6 @@
+pyopenssl==20.0.1
 paramiko==2.8.0
-requests==2.26.0
 beautifulsoup4==4.9.3
 python-telegram-bot==13.7
-pyopenssl==20.0.1
+requests==2.26.0
 
