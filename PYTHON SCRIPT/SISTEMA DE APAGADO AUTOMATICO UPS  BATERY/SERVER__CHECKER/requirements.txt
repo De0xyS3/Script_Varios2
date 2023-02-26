@@ -2,3 +2,4 @@ paramiko
 requests
 beautifulsoup4
 python-telegram-bot
+pyopenssl --upgrade
