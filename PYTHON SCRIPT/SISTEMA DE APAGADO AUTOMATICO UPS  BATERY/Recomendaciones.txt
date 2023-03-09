@@ -1,3 +1,5 @@
+pip install pip--upgrade
+pip install pyopenssl --upgrade
 Para habilitar el acceso SSH para la cuenta root en un servidor Linux, debe seguir estos pasos:
 
 Inicie sesión en el servidor Linux como usuario con permisos de superusuario.
