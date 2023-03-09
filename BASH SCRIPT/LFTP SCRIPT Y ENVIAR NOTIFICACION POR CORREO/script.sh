@@ -5,6 +5,18 @@
 
 ##sudo yum install mailx para centos
 
+# Uso del CPU
+CPU_USAGE=$(top -bn1 | grep "Cpu(s)" | \
+    sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | \
+    awk '{print 100 - $1}')
+
+# Uso de la memoria RAM
+MEM_USAGE=$(free | awk '/Mem/{printf("%.2f%"), $3/$2*100}')
+
+# Espacio disponible en disco
+DISK_USAGE=$(df -h | awk '$NF=="/"{printf "%s", $4}')
+
+
 # FTP LOGIN
 HOST='sftp://ftp.domain.com'
 USER='ftpusername'
@@ -18,6 +30,9 @@ LOCAL_DIR='/absolute/path/to/local/directory'
 
 # RUNTIME!
 echo
+echo "Estado actual del sistema:"
+echo "Uso del CPU: $CPU_USAGE%"
+echo "Uso de la memoria RAM: $MEM_USAGE"
 echo "Starting download $REMOTE_DIR from $HOST to $LOCAL_DIR"
 date
 
@@ -31,6 +46,7 @@ set sftp:auto-confirm yes
 mirror --use-pget-n=10 $REMOTE_DIR $LOCAL_DIR;
 exit
 EOF
+echo "Espacio disponible en disco: $DISK_USAGE"
 echo
 echo "Transfer finished"
 date
