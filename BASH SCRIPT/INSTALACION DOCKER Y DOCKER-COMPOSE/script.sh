@@ -1,6 +1,7 @@
 #!/bin/sh
 
-sudo apt-get install figlet pv &> /dev/null
+sudo apt-get install figlet -y &> /dev/null
+sudo apt-get install pv -y &> /dev/null
 echo "Comprobando si Docker está instalado..."
 if ! [ -x "$(command -v docker)" ]; then
   echo 'Docker is not installed. Installing...'
