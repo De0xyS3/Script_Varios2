@@ -58,7 +58,7 @@ import asyncio
 options = Options()
 # Creación del bot de Telegram
 
-bot = telegram.Bot(token="5947634113:AAHMuHTblIZdVxR6T7y0b18Oen5Q9ey_yQ8")
+bot = telegram.Bot(token="BOT")
 # Inicialización del navegador y carga de la página web
 driver = webdriver.Chrome(executable_path="/usr/local/bin/chromedriver")
 options.binary_location = "/usr/bin/google-chrome"
